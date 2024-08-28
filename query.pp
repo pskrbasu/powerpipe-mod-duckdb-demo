@@ -49,3 +49,12 @@ dashboard "testing_card_blocks" {
     }
   }
 }
+
+control "testing_control" {
+  title = "Testing control"
+  description = "This is a test control"
+
+  sql = <<-EOQ
+    SELECT id as resource, 'ok' as status, name as reason FROM employee;
+  EOQ
+}
